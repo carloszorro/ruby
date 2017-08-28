@@ -50,16 +50,31 @@ end
 
 #operación array suma
 def operation_2
-  puts "Digite los elementos del arreglo separados por comas"
+  # puts "Digite los elementos del arreglo separados por comas"
   # En caso de que el usuario ingrese elementos invalidos para el arreglo, la suma debe omitir esos elementos y entregar el resultado de la suma de los elementos validos
   # Deben mostrar cuales elementos fueron invalidos y cuales fueron los validos antes de mostrar el resultado
-  opts_array_1 = gets.chomp
-  puts "Digite los elementos del arreglo separados por comas"
-  opts_array_2 = gets.chomp
-  puts "Digite los elementos del arreglo separados por comas"
 
-  puts "El resultado de la operación #{opts_array_1} + #{opts_array_2} es : #{plus_array(opts_array_1, opts_array_2)}"
+  number_array = []
+  resultado = 0
 
+  puts "De cúantos números desea realizar el arreglo"
+  array_length = gets.chomp.to_i
+  i = 0
+  system "clear"
+
+  while i < array_length
+    puts "Digite los elementos que desea agregar al arreglo"
+    number_array = number_array.push(gets.chomp.to_f)
+    system "clear"
+    puts "El arreglo actual es #{number_array}"
+    resultado = resultado + number_array[i]
+    i += 1
+  end
+
+  puts "El resultado de la suma de los números del arreglo es: #{resultado}"
+  puts "Presione cualquier tecla para continuar"
+  gets.chomp
+  system "clear"
 end
 
 #operación RESTA
@@ -213,13 +228,6 @@ end
 
 # SUMA
 def sum(a, b)
-  a + b
-end
-
-# SUMA ARRAY
-def plus_array()
-  a = Array.new()
-  b = Array.new()
   a + b
 end
 
